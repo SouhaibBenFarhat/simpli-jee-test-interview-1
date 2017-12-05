@@ -1,6 +1,8 @@
 package fr.simplifia.input.validator.impl;
 
-import static org.testng.Assert.assertTrue;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Locale;
 
@@ -10,8 +12,9 @@ import org.testng.annotations.Test;
  * Created by simplifia on 18/09/17.
  */
 public class SmpInputValidatorFactoryTest {
-    @Test
+    @org.junit.Test
     public void testFromLocaleFrench() throws Exception {
+        
         assertTrue(SmpInputValidatorFactory.fromLocale(Locale.FRENCH) instanceof SmpDefaultInputValidator);
     }
 

@@ -14,26 +14,26 @@ import static org.mockito.Mockito.when;
  */
 public class SmpOutputWriterImplTest {
 
-    private PrintStream stream;
+	private PrintStream stream;
 
-    public SmpOutputWriterImplTest(){
-        stream = Mockito.mock(PrintStream.class);
-       doNothing().when(stream).println(anyString());
-    }
+	public SmpOutputWriterImplTest() {
+		stream = Mockito.mock(PrintStream.class);
+		doNothing().when(stream).println(anyString());
+	}
 
-    //TODO
-    @Test
-    public void testPrint() throws Exception {
-    }
+	// TODO
+	@Test
+	public void testPrint() throws Exception {
+	}
 
-    //TODO
-    @Test
-    public void testPrintEmpty() throws Exception {
-    }
+	// TODO
+	@Test
+	public void testPrintEmpty() throws Exception {
+	}
 
-    //TODO
-    @Test
-    public void testPrintNull() throws Exception {
-    }
+	// TODO
+	@Test
+	public void testPrintNull() throws Exception {
+	}
 
 }
