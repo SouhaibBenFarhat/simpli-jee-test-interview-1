@@ -24,6 +24,8 @@ public class Main {
         scanInput.close();
 
         
+        
+        //Testing commit
         //Validate the language entered by the user
         final SmpInputValidator validator = SmpInputValidatorFactory.fromLocale(locale);
         final SmpDataTransformer transformer = new SmpDataTransformer(validator);
