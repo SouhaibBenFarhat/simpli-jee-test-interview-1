@@ -26,7 +26,10 @@ public class SmpDefaultInputValidator extends AbstractSmpInputValidator {
 
 		if (locale.getLanguage().equals(MyCustomKeys.ENG)) {
 			System.out.println("English is the choosen language :D");
-
+			
+			
+			
+			// looping through the input characters and replace them if it's necessary 
 			for (int i = 0; i < inputBuilder.length(); i++) {
 				char c = inputBuilder.charAt(i);
 				if (c == "é".toCharArray()[0] || c == "ê".toCharArray()[0] || c == "è".toCharArray()[0]) {

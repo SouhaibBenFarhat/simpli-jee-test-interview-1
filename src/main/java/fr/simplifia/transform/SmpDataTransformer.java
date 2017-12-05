@@ -18,6 +18,7 @@ public class SmpDataTransformer {
         final StringBuffer buffer = new StringBuffer();
         buffer.append(validInput);
         
+        
         if(((SmpDefaultInputValidator)validator).getLocale().getLanguage().equals(MyCustomKeys.FR)) {
         	 buffer.append(MESSAGE_FR);
         } if(((SmpDefaultInputValidator)validator).getLocale().getLanguage().equals(MyCustomKeys.ENG)) {

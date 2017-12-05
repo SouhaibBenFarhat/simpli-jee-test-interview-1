@@ -23,8 +23,6 @@ public class Main {
         String input = scanInput.nextLine();
         scanInput.close();
 
-        
-        
         //Testing commit
         //Validate the language entered by the user
         final SmpInputValidator validator = SmpInputValidatorFactory.fromLocale(locale);
