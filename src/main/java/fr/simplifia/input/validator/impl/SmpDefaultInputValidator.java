@@ -25,7 +25,6 @@ public class SmpDefaultInputValidator extends AbstractSmpInputValidator {
 		}
 
 		if (locale.getLanguage().equals(MyCustomKeys.ENG)) {
-			System.out.println("English is the choosen language :D");
 			
 			
 			
@@ -39,7 +38,6 @@ public class SmpDefaultInputValidator extends AbstractSmpInputValidator {
 			input = inputBuilder.toString();
 		}
 		if (locale.getLanguage().equals(MyCustomKeys.FR)) {
-			System.out.println("Vous avez choisie le Français comme langage :D");
 			//Process for the french language	
 		}
 		

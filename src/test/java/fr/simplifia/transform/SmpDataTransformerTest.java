@@ -12,46 +12,58 @@ import org.junit.Test;
 
 public class SmpDataTransformerTest {
 
+	final String localeReadFR = "fr";
+	final String localeReadEN = "en";
 
 	public SmpDataTransformerTest() {
-		//validator = Mockito.mock(SmpInputValidator.class);
-		// TODO : mocking strategy
-		// when(validator.validateInput(input)).thenReturn();
+
 	}
 
 	@Test
 	public void testTransformOk() throws Exception {
 
-		final String localeRead = "en";
-		final Locale locale = LocaleExtractor.toLocale(localeRead);
-
+		Locale locale = LocaleExtractor.toLocale(localeReadEN);
 		String input = "école première empêchement";
-		final SmpInputValidator validator = SmpInputValidatorFactory.fromLocale(locale);
-		final SmpDataTransformer transformer = new SmpDataTransformer(validator);
-		final String transformedInput = transformer.transform(input);
-		
-        assertEquals("ecole premiere empechement : Welcome to Simplifia!", transformedInput);
-		
+		SmpInputValidator validator = SmpInputValidatorFactory.fromLocale(locale);
+		SmpDataTransformer transformer = new SmpDataTransformer(validator);
+		String transformedInput = transformer.transform(input);
+		assertEquals("ecole premiere empechement : Welcome to Simplifia!", transformedInput);
 
 	}
 
 	@Test
 	public void testTransformNotOk() throws Exception {
-		
-		final String localeRead = "fr";
-		final Locale locale = LocaleExtractor.toLocale(localeRead);
 
+		Locale locale = LocaleExtractor.toLocale(localeReadFR);
 		String input = "école première empêchement";
-		final SmpInputValidator validator = SmpInputValidatorFactory.fromLocale(locale);
-		final SmpDataTransformer transformer = new SmpDataTransformer(validator);
-		final String transformedInput = transformer.transform(input);
-		
-        assertEquals("école première empêchement : bienvenue chez Simplifia!", transformedInput);
+		SmpInputValidator validator = SmpInputValidatorFactory.fromLocale(locale);
+		SmpDataTransformer transformer = new SmpDataTransformer(validator);
+		String transformedInput = transformer.transform(input);
+		assertEquals("école première empêchement : bienvenue chez Simplifia!", transformedInput);
 
 	}
 
 	@Test
-	public void testTransformEmpty() throws Exception {
+	public void testTransformEmptyFrench() throws Exception {
+
+		final Locale locale = LocaleExtractor.toLocale(localeReadFR);
+		String input = "";
+		final SmpInputValidator validator = SmpInputValidatorFactory.fromLocale(locale);
+		final SmpDataTransformer transformer = new SmpDataTransformer(validator);
+		final String transformedInput = transformer.transform(input);
+		assertEquals("Chaine vide", transformedInput);
+
+	}
+	
+	@Test
+	public void testTransformEmptyEnglish() throws Exception {
+
+		final Locale locale = LocaleExtractor.toLocale(localeReadEN);
+		String input = "";
+		final SmpInputValidator validator = SmpInputValidatorFactory.fromLocale(locale);
+		final SmpDataTransformer transformer = new SmpDataTransformer(validator);
+		final String transformedInput = transformer.transform(input);
+		assertEquals("Empty String", transformedInput);
 
 	}
 
