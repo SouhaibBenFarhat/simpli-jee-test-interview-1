@@ -16,6 +16,10 @@ public class SmpDataTransformer {
 
 	public String transform(String input) {
 
+		if (input == null) {
+			return "Null Values are not allowed...";
+		}
+
 		if (input == "" && ((SmpDefaultInputValidator) validator).getLocale().getLanguage().equals(MyCustomKeys.FR)) {
 			return "Chaine vide";
 		}

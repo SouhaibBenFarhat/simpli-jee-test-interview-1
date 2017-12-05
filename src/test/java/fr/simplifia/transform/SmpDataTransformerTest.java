@@ -69,7 +69,12 @@ public class SmpDataTransformerTest {
 
 	@Test
 	public void testTransformNull() throws Exception {
-
+		final Locale locale = LocaleExtractor.toLocale(localeReadEN);
+		String input = null;
+		final SmpInputValidator validator = SmpInputValidatorFactory.fromLocale(locale);
+		final SmpDataTransformer transformer = new SmpDataTransformer(validator);
+		final String transformedInput = transformer.transform(input);
+		assertEquals("Null Values are not allowed...", transformedInput);
 	}
 
 }
