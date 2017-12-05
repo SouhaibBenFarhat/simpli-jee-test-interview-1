@@ -14,7 +14,7 @@ public class LocaleExtractor {
 		Objects.requireNonNull(input);
 		final String cleanedInput = StringUtils.trim(input).toLowerCase();
 		final Locale result = extractLocale(cleanedInput);
-		if (!localeIsValid(result) && result != null) {
+		if (!localeIsValid(result) || result == null ) {
 			throw new InputException("given Locale is not handled");
 		}
 
